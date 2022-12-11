@@ -165,7 +165,7 @@ public class LibertyRestEndpoint extends Application {
             return jsonReader.readObject();
           }
         } else {
-          System.out.println("Error: unable to contact " + ratings_service + " got status of " + statusCode);
+          System.out.println("[" + requestHeaders.getHeaderString("x-request-id") + "] Error: unable to contact " + ratings_service + " got status of " + statusCode);
           return null;
         }
       } catch (ProcessingException e) {
