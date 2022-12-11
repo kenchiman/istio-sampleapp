@@ -198,6 +198,7 @@ dispatcher.onGet(/^\/ratings\/[0-9]*/, function (req, res) {
       else if (process.env.SERVICE_VERSION === 'v-unavailable' || process.env.SERVICE_VERSION === 'v-unhealthy') {
           if (unavailable) {
               getLocalReviewsServiceUnavailable(res)
+              console.log("error: 'Service unavailable'" + ' ' + JSON.stringify(req.headers))
           } else {
               getLocalReviewsSuccessful(res, productId)
           }
